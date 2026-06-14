@@ -56,7 +56,6 @@ async function getSurah(surahServer, surahList) {
         const selecteSurah = chooseSurah.options[chooseSurah.selectedIndex]
         playAudio(selecteSurah.value)
     })
-
 }
 
 async function playAudio(surahMp3) {
@@ -64,15 +63,41 @@ async function playAudio(surahMp3) {
     playSurah.src = surahMp3
     playSurah.play()
 }
-//readind quran
 
-async function readingQuran() {
-    const response = await fetch('https://api.alquran.cloud/v1/page/1/quran-uthmani')
+// tafsir quran
+
+async function surahTafsir() {
+    const chooseTafsir = document.querySelector("#chooseTafsir")
+    // https://www.mp3quran.net/api/v3/tafsir?tafsir=1&language=ar
+    const response = await fetch(`${apiUrl}/tafsir?tafsir=1&language=${language}`)
     const data = await response.json()
-    console.log(data)
-}
+    console.log(data.tafasir)
+    chooseTafsir.innerHTML = `<option>اختر سورة</option>`
 
-readingQuran()
+    data.tafasir.soar.forEach((item) => {
+        chooseTafsir.innerHTML += `<option value="${item.id}" data-url="${item.url}">${item.name}</option>`
+    })
+    chooseTafsir.addEventListener("change", e => {
+        const selecteTafsir = chooseTafsir.options[chooseTafsir.selectedIndex]
+        playTasir(selecteTafsir.dataset.url)
+    })
+}
+surahTafsir()
+
+async function playTasir(tafasir) {
+    const tafsir = document.querySelector("#tafsir")
+    tafsir.src=tafasir
+    tafsir.play()
+}
+//reading quran
+
+// async function readingQuran() {
+//     const response = await fetch('https://api.alquran.cloud/v1/page/1/quran-uthmani')
+//     const data = await response.json()
+//     console.log(data)
+// }
+
+// readingQuran()
 // player Radio of Reciters
 
 function getRadios() {

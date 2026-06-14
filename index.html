@@ -48,7 +48,7 @@
         </ul>
 
         <!-- menu in mobile responsive -->
-        <div class="flex md:hidden"><i class="fa-solid fa-bars font-bold text-xl cursor-pointer"></i></div>
+        <div class="flex md:hidden"><i class="fa-solid fa-bars font-bold text-2xl cursor-pointer"></i></div>
 
         <ul class="menu hidden absolute flex-col bg-[linear-gradient(to_left,#273338,#2B5748,#618764,#9CB080)] 
         rounded-xl p-3 justify-center items-center font-bold text-xl px-10 space-y-4 top-20 right-2">
@@ -95,7 +95,8 @@
         <div class="flex justify-center items-center">
             <a href="#" class="flex justify-center items-center">
                 <h2 class="font-bold flex justify-center items-center">موقع القرآن الكريم
-                    <img src="images/Qur_an-vector_-_yaritsu_zy-removebg-preview.png" class="w-10 h-10 md:w-20 md:h-20" alt="">
+                    <img src="images/Qur_an-vector_-_yaritsu_zy-removebg-preview.png" class="w-10 h-10 md:w-20 md:h-20"
+                        alt="">
                 </h2>
             </a>
 
@@ -112,8 +113,8 @@
                 <span class="text-4xl"><strong>القرآن الكريم</strong></span>
             </div>
             <div
-                class="w-full bg-white rounded-xl flex flex-col justify-center items-center gap-4 lg:gap-7 py-10 px-2 lg:px-4">
-                <div class="container flex flex-col md:flex-row justify-evenly items-center gap-4 lg:gap-7 py-10">
+                class="w-full bg-white rounded-xl flex flex-col justify-center items-center gap-4 lg:gap-7 py-6 px-2 lg:px-4">
+                <div class="container flex flex-col md:flex-row justify-evenly items-center gap-4 lg:gap-7 py-6">
                     <div class=" flex flex-col gap-4 ">
                         <label class=" text-[#273338] font-bold text-lg">اختر قارئ</label>
                         <div class="relative">
@@ -155,7 +156,29 @@
         </div>
     </main>
 
+    <!-- first section  -->
+    <section id="sec1" class="w-full flex justify-center items-center p-10 scroll-mt-10">
+        <div class="container w-full h-60 rounded-xl flex flex-col justify-center items-center gap-6
+         bg-[url('images/tafsir.jpeg')]">
+            <div>
+                <h2 class="font-bold text-2xl text-white">الخلاصة من تفسير الطبري</h2>
+            </div>
+            <div class="flex flex-col justify-center items-center gap-4 px-5 space-x-4">
+                <label class=" font-bold text-lg text-white ">اخترالسورة </label>
 
+                <div class="relative">
+                    <select name="" id="chooseTafsir"
+                        class="w-56 appearance-none py-1 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer">
+                    </select>
+
+                    <i
+                        class="fa-solid fa-caret-down absolute text-[#273338] left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
+                <audio src="" id="tafsir" class="w-full md:w-96 ring-1 ring-[#273338] rounded-full" controls></audio>
+            </div>
+        </div>
+
+    </section>
     <!-- second section -->
     <section id="sec2" class="w-full flex justify-center items-center p-10 scroll-mt-10">
         <div class="container flex flex-col gap-10 justify-center items-center font-bold">
@@ -168,8 +191,8 @@
                     class="bg-white text-[#273338] rounded-xl p-2 cursor-pointer hover:shadow-xl hover:shadow-black flex justify-center items-center gap-2">قناة
                     السنة النبوية <img src="images/masjid-al-nabawi_16183907.png" class="w-10 h-10" alt=""></a>
             </div>
-            <video src="" id="liveVideo"
-                class="w-[600px] h-[300px] rounded-xl shadow-lg shadow-black ring-1 ring-white" controls>
+            <video src="" id="liveVideo" class="w-[600px] h-[300px] rounded-xl shadow-lg shadow-black ring-1 ring-white"
+                controls>
 
             </video>
         </div>
@@ -195,7 +218,7 @@
                     <i
                         class="fa-solid fa-caret-down absolute text-[#273338] left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
                 </div>
-                <audio src="" id="radio" class="w-full md:w-96 ring-1 ring-[#273338] rounded-full" controls></ش>
+                <audio src="" id="radio" class="w-full md:w-96 ring-1 ring-[#273338] rounded-full" controls></audio>
             </div>
         </div>
     </section>
