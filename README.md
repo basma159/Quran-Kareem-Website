@@ -27,6 +27,7 @@ A responsive Quran web application that allows users to listen to Quran recitati
 ### Styling
 
 * Tailwind CSS
+* Responsive Web Design
 * Custom CSS
 
 ### APIs
