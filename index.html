@@ -63,13 +63,13 @@
                 <p class="text-xl tracking-widest">رحلة طيبة في رحاب </p>
                 <span class="text-4xl"><strong>القرآن الكريم</strong></span>
             </div>
-            <div class="w-full bg-white rounded-xl flex flex-col justify-center items-center gap-7 py-10 px-4">
-                <div class="container flex justify-evenly items-center gap-7 py-10">
+            <div class="w-full bg-white rounded-xl flex flex-col justify-center items-center gap-4 lg:gap-7 py-10 px-2 lg:px-4">
+                <div class="container flex flex-col md:flex-row justify-evenly items-center gap-4 lg:gap-7 py-10">
                     <div class=" flex flex-col gap-4 ">
                         <label class=" text-[#273338] font-bold text-lg">اختر قارئ</label>
                         <div class="relative">
                             <select name="" id="chooseReciters"
-                                class="w-40 appearance-none py-1 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer">
+                                class="w-56 appearance-none py-1 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer">
                             </select>
 
                             <i
@@ -92,14 +92,14 @@
                         <label class="text-[#273338] font-bold text-lg">اختر سورة</label>
                         <div class="relative">
                             <select name="" id="chooseSurah"
-                                class="w-40 appearance-none py-1 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer">
+                                class="w-56 appearance-none py-1 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer">
                             </select>
                             <i
                                 class="fa-solid fa-caret-down absolute text-[#273338] left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
                         </div>
                     </div>
                 </div>
-                <audio src="" id="playSurah" class="w-96" controls></audio>
+                <audio src="" id="playSurah" class="w-full md:w-96 ring-1 ring-[#273338] rounded-full" controls></audio>
             </div>
 
 
@@ -111,7 +111,7 @@
     <section id="sec2" class="w-full flex justify-center items-center p-10 scroll-mt-10">
         <div class="container flex flex-col gap-10 justify-center items-center font-bold">
             <h2 class="text-xl text-white">اختر قناة البث المباشر</h2>
-            <div class="flex  gap-4">
+            <div class="flex gap-4 text-sm md:text-base">
                 <a href="javascript:void(0)" onclick="playLive('https://win.holol.com/live/quran/playlist.m3u8')"
                     class="bg-white text-[#273338] rounded-xl p-2 cursor-pointer hover:shadow-xl hover:shadow-black flex justify-center items-center gap-2">قناة
                     القرآن الكريم <img src="images/building_16183908.png" class="w-10 h-10" alt=""></a>
