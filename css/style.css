@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    height: 100vh;
+    background: -webkit-linear-gradient(top, #273338, #2B5748, #618764, #9CB080);
+} */
+ 
+/* body{
+    background-image: url(../images/masjid-pogung-dalangan-DBsQFuIbXg4-unsplash.jpg);
+} */
+
+body {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
