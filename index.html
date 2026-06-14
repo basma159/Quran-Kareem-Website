@@ -31,20 +31,25 @@
                 <a href="#main">عرض
                     السور</a>
             </li>
-
-            <li
-                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec2">بث
-                    مباشر</a>
-            </li>
-            <li
-                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec3">راديو</a>
-            </li>
             <li
                 class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
                 <a href="#sec1">تفسير</a>
             </li>
+            <li
+                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#sec2">تدبر</a>
+            </li>
+
+            <li
+                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#sec3">بث
+                    مباشر</a>
+            </li>
+            <li
+                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#sec4">راديو</a>
+            </li>
+
         </ul>
 
         <!-- menu in mobile responsive -->
@@ -57,20 +62,25 @@
                 <a href="#main">عرض
                     السور</a>
             </li>
-
-            <li
-                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec2">بث
-                    مباشر</a>
-            </li>
-            <li
-                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec3">راديو</a>
-            </li>
             <li
                 class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
                 <a href="#sec1">تفسير</a>
             </li>
+            <li
+                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#sec2">تدبر</a>
+            </li>
+
+            <li
+                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#sec3">بث
+                    مباشر</a>
+            </li>
+            <li
+                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#sec4">راديو</a>
+            </li>
+
         </ul>
         <script>
             let menuIcon = document.querySelector(".fa-bars")
@@ -179,8 +189,35 @@
         </div>
 
     </section>
+
     <!-- second section -->
-    <section id="sec2" class="w-full flex justify-center items-center p-10 scroll-mt-10">
+    <section id="sec2" class="w-full flex flex-col justify-center items-center p-10 scroll-mt-10">
+        <div class="container w-full flex flex-col justify-center items-center gap-4">
+
+            <h2 class="text-2xl text-white font-bold"> تدبر بعض من آيات القرآن الكريم</h2>
+            <div class="flex flex-col justify-center items-center gap-4 text-sm md:text-base">
+                <label class=" font-bold text-lg text-white "> اختر الآية</label>
+
+                <div class="relative">
+                    <select name="" id="chooseTadabor"
+                        class="w-56 font-bold appearance-none py-1 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer">
+                    </select>
+
+                    <i
+                        class="fa-solid fa-caret-down absolute text-[#273338] left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                </div>
+            </div>
+            <video src="" id="tadabor" class="w-[600px] h-[300px] rounded-xl shadow-lg shadow-black ring-1 ring-white"
+                controls>
+
+            </video>
+        </div>
+
+    </section>
+
+
+    <!-- third section -->
+    <section id="sec3" class="w-full flex justify-center items-center p-10 scroll-mt-10">
         <div class="container flex flex-col gap-10 justify-center items-center font-bold">
             <h2 class="text-xl text-white">اختر قناة البث المباشر</h2>
             <div class="flex gap-4 text-sm md:text-base">
@@ -196,12 +233,11 @@
 
             </video>
         </div>
-
     </section>
 
 
-    <!-- third section -->
-    <section id="sec3" class="w-full  flex justify-center items-center p-10 scroll-mt-10">
+    <!-- fourth section -->
+    <section id="sec4" class="w-full  flex justify-center items-center p-10 scroll-mt-10">
         <div class="container h-96 flex justify-center gap-6 items-center py-10 bg-[url('images/abdullah-arif-Dxi6KbpvUgA-unsplash.jpg')] 
         bg-no-repeat bg-cover bg-center rounded-xl px-5">
             <div class="flex flex-col justify-center items-center gap-8 px-5 space-x-4">
@@ -223,8 +259,8 @@
         </div>
     </section>
 
-    <!-- forth section -->
-    <section id="sec4" class="w-full  flex justify-center items-center p-10 scroll-mt-10">
+    <!-- fifth section -->
+    <section id="sec5" class="w-full  flex justify-center items-center p-10 scroll-mt-10">
         <div class="container w-full h-fit flex justify-center gap-6 items-center py-10 px-4 bg-[url('images/ashkan-forouzani-7blIFp0kFP4-unsplash.jpg')] 
         bg-no-repeat bg-cover rounded-xl">
             <div class="flex flex-col justify-center items-center gap-8">

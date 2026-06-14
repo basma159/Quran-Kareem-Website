@@ -71,7 +71,7 @@ async function surahTafsir() {
     // https://www.mp3quran.net/api/v3/tafsir?tafsir=1&language=ar
     const response = await fetch(`${apiUrl}/tafsir?tafsir=1&language=${language}`)
     const data = await response.json()
-    console.log(data.tafasir)
+    // console.log(data.tafasir)
     chooseTafsir.innerHTML = `<option>اختر سورة</option>`
 
     data.tafasir.soar.forEach((item) => {
@@ -84,10 +84,36 @@ async function surahTafsir() {
 }
 surahTafsir()
 
-async function playTasir(tafasir) {
+async function playTasir(Tafasir) {
     const tafsir = document.querySelector("#tafsir")
-    tafsir.src=tafasir
+    tafsir.src = Tafasir
     tafsir.play()
+}
+
+// tadabor quran
+
+async function surahTadabor() {
+    const chooseTadabor = document.querySelector("#chooseTadabor")
+    // https://mp3quran.net/api/v3/tadabor?sura=3&language=ar
+    const response = await fetch(`${apiUrl}/tadabor?sura=3&language=${language}`)
+    const data = await response.json()
+    console.log(data.tadabor)
+    chooseTadabor.innerHTML = `<option>اختر آية</option>`
+
+    data.tadabor['3'].forEach((item) => {
+        chooseTadabor.innerHTML += `<option value="${item.id}" data-url="${item.video_url}">${item.title}</option>`
+    })
+    chooseTadabor.addEventListener("change", e => {
+        const selecteTadabor = chooseTadabor.options[chooseTadabor.selectedIndex]
+        playTadabor(selecteTadabor.dataset.url)
+    })
+}
+surahTadabor()
+
+async function playTadabor(Tadabor) {
+    const tadabor = document.querySelector("#tadabor")
+    tadabor.src = Tadabor
+    tadabor.play()
 }
 //reading quran
 
