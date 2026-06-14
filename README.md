@@ -1,15 +1,18 @@
 ## Features
 
-* Select and listen to Quran recitations from different reciters.
-* Choose different Riwayat (Moshaf versions).
-* Browse and play Quran surahs dynamically.
-* Listen to Quran radio stations.
-* Watch live Quran and Sunnah TV channels.
-* Listen to Cairo Quran Radio.
-* Listen to Tafsir Al-Tabari audio explanations.
-* Select a surah and play its corresponding Tafsir audio.
-* Responsive design for mobile, tablet, and desktop devices.
-* Clean and user-friendly Islamic interface.
+Select and listen to Quran recitations from different reciters.
+Choose different Riwayat (Moshaf versions).
+Browse and play Quran surahs dynamically.
+Listen to Tafsir Al-Tabari audio explanations.
+Select a surah and play its corresponding Tafsir audio.
+Listen to Quran radio stations.
+Watch live Quran and Sunnah TV channels.
+Listen to Cairo Quran Radio.
+Tadabbur (Reflection) Section:
+Select a Quran verse.
+Display a related reflection video for the selected verse.
+Responsive design for mobile, tablet, and desktop devices.
+Clean and modern Islamic-themed user interface.
 
 ## Technologies Used
 
