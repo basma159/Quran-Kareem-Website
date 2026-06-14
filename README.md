@@ -71,7 +71,7 @@ Clean and modern Islamic-themed user interface.
 
 ## Live Demo
 
-🔗 https://basma159.github.io/-/
+🔗 https://basma159.github.io/Quran-Kareem-Website/
 
 ## Screenshots
 
