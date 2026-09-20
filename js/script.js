@@ -1,3 +1,34 @@
+
+///// observer
+const sections = document.querySelectorAll(".section")
+const options = {
+    threshold: .5,
+    // rootMargin:"64px",
+}
+
+const observer = new IntersectionObserver((entries) => {
+    const visibleSection = entries.find(el => el.isIntersecting)
+    const a = document.querySelectorAll("header ul a").forEach(a => {
+        const li = a.closest("li")
+        if (visibleSection) {
+            if ("#" + visibleSection.target.id == a.getAttribute("href")) {
+                li.classList.add("bg-white")
+                li.classList.add("text-[#273338]")
+            }
+            else {
+                li.classList.remove("bg-white")
+                li.classList.remove("text-[#273338]")
+            }
+        }
+    })
+
+}, options)
+
+sections.forEach(section => {
+    observer.observe(section)
+})
+
+
 // get reciters and suwars
 
 const apiUrl = 'https://mp3quran.net/api/v3'
@@ -69,6 +100,98 @@ async function playAudio(surahMp3) {
     playSurah.play()
 }
 
+// surahs()
+
+// Display pages of quran
+
+const quranPages = document.querySelector("#quranPages");
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
+
+async function chooseQuran() {
+    try {
+        const response = await fetch(
+            "https://quran.yousefheiba.com/api/quranPagesImage"
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch Quran pages");
+        }
+        const data = await response.json();
+        const choosePage = document.querySelector("#choosePage")
+        // البيانات موجودة داخل data.pages
+        data.pages.forEach(page => {
+            choosePage.innerHTML += `<option value="${page.page_number}" class="h-9">${page.page_number}</option>`
+
+            const slide = document.createElement("div");
+            slide.className =
+                "swiper-slide flex justify-center items-center";
+            slide.innerHTML = `
+                <img
+                    src="${page.page_url}"
+                    alt="صفحة القرآن ${page.page_number}"
+                    class="w-full max-w-[450px] h-[560px] object-contain rounded-xl"
+                    loading="lazy">`;
+            quranPages.appendChild(slide);
+        });
+        // إنشاء Swiper
+        const swiper = new Swiper(".quranSwiper", {
+            // البداية
+            initialSlide: 0,
+            rtl: true,
+            // موبايل
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 6,
+            // الحركة
+            speed: 500,
+            // السحب باللمس
+            allowTouchMove: true,
+            grabCursor: true,
+            touchRatio: 1,
+            threshold: 5,
+            resistanceRatio: 0.85,
+            // مهم جداً
+            loop: false,
+            // Desktop
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                    spaceBetween: 20
+                }
+            }
+        });
+        choosePage.addEventListener("change", () => {
+            const pageNumber = Number(choosePage.value)
+            if (pageNumber) {
+                return swiper.slideTo(pageNumber - 1)
+            }
+        })
+        // زر السابق
+        prevBtn.addEventListener("click", () => {
+            swiper.slidePrev();
+        });
+        // زر التالي
+        nextBtn.addEventListener("click", () => {
+            swiper.slideNext();
+        });
+        // تحديث حالة الأزرار
+        function updateButtons() {
+            prevBtn.disabled = swiper.isBeginning;
+            nextBtn.disabled = swiper.isEnd;
+        }
+        // أول مرة
+        updateButtons();
+        // كل ما الصفحة تتغير
+        swiper.on("slideChange", updateButtons);
+    }
+    catch (error) {
+        console.error("Error:", error);
+    }
+}
+chooseQuran();
+
 // tafsir quran
 
 async function surahTafsir() {
@@ -95,41 +218,21 @@ async function playTasir(Tafasir) {
     tafsir.play()
 }
 //surahs of quran 
-async function surahs() {
-    const container = document.querySelector(".container1")
-    const response = await fetch('http://api.alquran.cloud/v1/meta')
-    const data = await response.json()
-    // console.log(data.data.surahs.references)
-    data.data.surahs.references.forEach(item => {
-        container.innerHTML += `<div class="text-[#273338] font-bold bg-white py-2 md:text-sm lg:text-lg rounded-lg hover:ring-1 hover:ring-[#273338]
-        flex flex-col justify-center items-center gap-2 cursor-pointer hover:shadow-lg hover:shadow-black">
-        <p>${item.name}</p>
-        <p>${item.englishName}</p>
-        </div>`
-    })
+// async function surahs() {
+//     const container = document.querySelector(".container1")
+//     const response = await fetch('http://api.alquran.cloud/v1/meta')
+//     const data = await response.json()
+//     // console.log(data.data.surahs.references)
+//     data.data.surahs.references.forEach(item => {
+//         container.innerHTML += `<div class="text-[#273338] font-bold bg-white py-2 md:text-sm lg:text-lg rounded-lg hover:ring-1 hover:ring-[#273338]
+//         flex flex-col justify-center items-center gap-2 cursor-pointer hover:shadow-lg hover:shadow-black">
+//         <p>${item.name}</p>
+//         <p>${item.englishName}</p>
+//         </div>`
+//     })
 
-}
+// }
 
-surahs()
-// Display pages of quran
-
-async function chooseQuran() {
-    const choosePage = document.querySelector("#choosePage")
-    const response = await fetch('https://quran.yousefheiba.com/api/quranPagesImage')
-    const data = await response.json()
-    // console.log(data.pages)
-    choosePage.innerHTML = `<option>اختر صفحة من القرآن</option>`
-
-    data.pages.forEach(item => {
-        choosePage.innerHTML += `<option value="${item.page_url}">${item.page_number}</option>`
-    })
-    choosePage.addEventListener('change', e => {
-        const selectePage = choosePage.options[choosePage.selectedIndex]
-        displayQuran(selectePage.value)
-    })
-
-}
-chooseQuran()
 
 async function displayQuran(display) {
     const displayQuran = document.querySelector("#displayQuran")

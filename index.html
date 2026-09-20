@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -12,42 +12,49 @@
     <!-- font google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Clicker+Script&family=Great+Vibes&family=Jost:ital,wght@0,100..900;1,100..900&family=Mirza:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/14.2.0/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body class="bg-[linear-gradient(to_right,#273338,#2B5748,#618764,#9CB080)]">
+<body class="bg-[linear-gradient(to_right,#273338,#2B5748,#618764,#9CB080)] relative">
 
     <!-- header section -->
-    <header
-        class="fixed top-0 right-0 z-50 w-full h-16 text-white font-bold text-base lg:text-xl flex 
-     justify-between items-center px-4 md:px-10 bg-[linear-gradient(to_left,#273338,#2B5748,#618764,#9CB080)] shadow-xl shadow-black/35">
+    <header class="fixed top-0 right-0 z-50 w-full h-16 text-white font-bold text-base lg:text-xl flex 
+     justify-between items-center px-4 md:px-10 shadow-xl shadow-black/35 backdrop-blur-2xl
+      bg-[linear-gradient(to_right,#273338,#2B5748,#618764,#9CB080)] border-b-2 border-b-white">
 
         <!-- taplet and labtop responsive -->
         <ul class="hidden md:flex gap-10 justify-center items-center">
-            <li
-                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#main">عرض
-                    السور</a>
+            <li class="rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#main">
+                    سماع</a>
             </li>
-            <li
-                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec1">تفسير</a>
+            <li class="rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#Quran">
+                    قراءة</a>
             </li>
-            <li
-                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec2">تدبر</a>
+            <li class="rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#tafsir">تفسير</a>
+            </li>
+            <li class="rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#tadabor">تدبر</a>
             </li>
 
-            <li
-                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec3">بث
-                    مباشر</a>
+            <li class="rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#live">بث
+                </a>
             </li>
-            <li
-                class="hover:bg-white hover:text-[#273338] rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec4">راديو</a>
+            <li class="rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#radio">راديو</a>
             </li>
 
         </ul>
@@ -55,30 +62,36 @@
         <!-- menu in mobile responsive -->
         <div class="flex md:hidden"><i class="fa-solid fa-bars font-bold text-2xl cursor-pointer"></i></div>
 
-        <ul class="menu hidden absolute flex-col bg-[linear-gradient(to_left,#273338,#2B5748,#618764,#9CB080)] 
-        rounded-xl p-3 justify-center items-center font-bold text-xl px-10 space-y-4 top-20 right-2">
+        <ul
+            class="menu sections hidden absolute flex-col bg-[linear-gradient(to_right,#273338,#2B5748,#618764,#9CB080)] 
+        rounded-xl p-3 justify-center items-center font-bold text-xl px-10 space-y-4 top-full right-0 w-full mx-auto border-2 border-white transform transition-all duration-300">
             <li
-                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#main">عرض
+                class="flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#main">سماع
                     السور</a>
             </li>
             <li
-                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec1">تفسير</a>
+                class="flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#Quran">قراءة
+                    القرآن</a>
             </li>
             <li
-                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec2">تدبر</a>
+                class="flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#tafsir">تفسير</a>
+            </li>
+            <li
+                class="flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#tadabor">تدبر</a>
             </li>
 
             <li
-                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec3">بث
+                class="flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#live">بث
                     مباشر</a>
             </li>
             <li
-                class="hover:bg-white hover:text-[#273338] flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
-                <a href="#sec4">راديو</a>
+                class="flex justify-center items-center rounded-xl px-4 py-2 cursor-pointer transition-all duration-300">
+                <a href="#radio">راديو</a>
             </li>
 
         </ul>
@@ -92,30 +105,35 @@
                 if (menu.classList.contains("hidden")) {
                     menuIcon.classList.add("fa-bars")
                     menuIcon.classList.remove("fa-xmark")
+
+
                 }
                 else {
                     menuIcon.classList.remove("fa-bars")
                     menuIcon.classList.add("fa-xmark")
                 }
             })
-
+            document.addEventListener("click", e => {
+                if (!menu.contains(e.target) && !menuIcon.contains(e.target)) {
+                    menu.classList.add("hidden")
+                    menuIcon.classList.add("fa-bars")
+                    menuIcon.classList.remove("fa-xmark")
+                }
+            })
         </script>
 
 
         <div class="flex justify-center items-center">
             <a href="#" class="flex justify-center items-center">
-                <h2 class="font-bold flex justify-center items-center">موقع القرآن الكريم
-                    <img src="images/Qur_an-vector_-_yaritsu_zy-removebg-preview.png" class="w-10 h-10 md:w-20 md:h-20"
-                        alt="">
+                <h2 class="logo font-bold text-[#9CB080] flex justify-center items-center gap-3">موقع القرآن الكريم
+                    <img src="images/logo.jpg" class="w-16 h-10 rounded-lg" alt="logo">
                 </h2>
             </a>
-
         </div>
-
     </header>
 
     <!-- main section -->
-    <main id="main" class="w-full min-h-screen pt-20 flex justify-center items-center bg-fixed
+    <main id="main" class="section w-full min-h-screen pt-20 flex justify-center items-center bg-fixed
         bg-[url(./images/masjid-pogung-dalangan-DBsQFuIbXg4-unsplash.jpg)] bg-no-repeat bg-cover ">
         <div class="container w-full min-h-screen flex flex-col justify-evenly items-center px-4">
             <div class="flex text-white flex-col justify-center items-center gap-3">
@@ -165,34 +183,46 @@
 
         </div>
     </main>
-    <!-- surahs of quran  -->
-    <section id="" class="w-full flex justify-center items-center p-10 scroll-mt-10">
-        <div class="container1 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4">
-            
-        </div>
-    </section>
 
-    <!-- pages of quran -->
-    <section id="" class="w-full flex justify-center items-center p-10 scroll-mt-10">
-        <div class="flex flex-col justify-center items-center gap-4 ">
-            <h2 class="text-white text-2xl font-bold">قراءة القرآن الكريم</h2>
+    <section id="Quran" class="section w-full flex justify-center items-center p-4 md:p-10 scroll-mt-10">
+        <div class="w-full max-w-6xl flex flex-col justify-center items-center gap-5">
 
-            <label class="text-[#273338] font-bold text-lg">اختر صفحة من القرآن</label>
+            <h2 class="text-white text-2xl font-bold">
+                قراءة القرآن الكريم
+            </h2>
+            <label class="font-bold text-xl text-[#273338]">اختر صفحة من القرآن</label>
             <div class="relative">
-                <select name="" id="choosePage" class="w-56 font-bold text-lg appearance-none py-2 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer
+                <select id="choosePage" class="w-56 font-bold text-lg appearance-none py-2 ring-1 pr-2 ring-[#273338] rounded-lg outline-none cursor-pointer
                                 flex justify-center items-center">
                 </select>
                 <i
                     class="fa-solid fa-caret-down absolute text-[#273338] left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
             </div>
-            <img id="displayQuran" class="w-[500px] h-[500px]">
-        </div>
 
+            <div class="swiper quranSwiper w-full h-[570px] bg-white py-3 relative z-10 
+            flex justify-center items-center rounded-lg" dir="rtl">
+                <div id="quranPages" class="swiper-wrapper">
+                    <!-- الصور هتتضاف هنا من الـ API -->
+                </div>
+
+                <!-- Buttons -->
+                <button id="prevBtn" type="button" class="hidden md:block absolute right-0 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-5 py-2 
+                    rounded-lg bg-[#273338] text-white font-bold disabled:opacity-40 disabled:cursor-not-allowed
+                    opacity-10 hover:opacity-100 transition-all duration-300">
+                    السابق
+                </button>
+                <button id="nextBtn" type="button" class="hidden md:block absolute left-0 top-1/2 translate-x-1/2 -translate-y-1/2 z-10 px-5 py-2
+                    rounded-lg bg-[#273338] text-white font-bold disabled:opacity-40 disabled:cursor-not-allowed
+                     opacity-10 hover:opacity-100 transition-all duration-300">
+                    التالي
+                </button>
+            </div>
+        </div>
     </section>
 
     <!-- first section  -->
-    <section id="sec1" class="w-full flex justify-center items-center p-10 scroll-mt-10">
-        <div class="container w-full h-60 rounded-xl flex flex-col justify-center items-center gap-6
+    <section id="tafsir" class="section w-full flex justify-center items-center p-10 scroll-mt-10">
+        <div class="container w-full h-96 rounded-xl flex flex-col justify-center items-center gap-6
          bg-[url('images/tafsir.jpeg')]">
             <div>
                 <h2 class="font-bold text-2xl text-white">الخلاصة من تفسير الطبري</h2>
@@ -215,8 +245,9 @@
     </section>
 
     <!-- second section -->
-    <section id="sec2" class="w-full flex flex-col justify-center items-center p-10 scroll-mt-10">
-        <div class="container w-full flex flex-col justify-center items-center gap-4 text-center">
+    <section id="tadabor" class="section w-full flex flex-col justify-center items-center p-10 scroll-mt-10">
+        <div class="container w-full flex flex-col justify-center items-center gap-4 text-center p-5 rounded-lg">
+        
             <h2 class="text-lg md:text-2xl text-white font-bold"> تدبر بعض من آيات القرآن الكريم</h2>
             <div class="flex flex-col justify-center items-center gap-4 text-sm md:text-base">
                 <label class=" font-bold text-lg text-white "> اختر الآية</label>
@@ -240,7 +271,7 @@
 
 
     <!-- third section -->
-    <section id="sec3" class="w-full flex justify-center items-center p-10 scroll-mt-10">
+    <section id="live" class="section w-full flex justify-center items-center p-10 scroll-mt-10">
         <div class="container flex flex-col gap-10 justify-center items-center font-bold">
             <h2 class="text-xl text-white">اختر قناة البث المباشر</h2>
             <div class="flex gap-4 text-sm md:text-base">
@@ -260,7 +291,7 @@
 
 
     <!-- fourth section -->
-    <section id="sec4" class="w-full  flex justify-center items-center p-10 scroll-mt-10">
+    <section id="radio" class="section w-full  flex justify-center items-center p-10 scroll-mt-10">
         <div class="container h-96 flex justify-center gap-6 items-center py-10 bg-[url('images/abdullah-arif-Dxi6KbpvUgA-unsplash.jpg')] 
         bg-no-repeat bg-cover bg-center rounded-xl px-5">
             <div class="flex flex-col justify-center items-center gap-8 px-5 space-x-4">
@@ -283,7 +314,7 @@
     </section>
 
     <!-- fifth section -->
-    <section id="sec5" class="w-full  flex justify-center items-center p-10 scroll-mt-10">
+    <section id="radio2" class="w-full  flex justify-center items-center p-10 scroll-mt-10">
         <div class="container w-full h-fit flex justify-center gap-6 items-center py-10 px-4 bg-[url('images/ashkan-forouzani-7blIFp0kFP4-unsplash.jpg')] 
         bg-no-repeat bg-cover rounded-xl">
             <div class="flex flex-col justify-center items-center gap-8">
@@ -298,6 +329,45 @@
         </div>
     </section>
 
+
+    <footer class="w-full bg-[#273338] text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col items-center gap-5">
+
+            <h2 class="logo text-2xl font-bold text-[#9CB080] flex justify-center items-center gap-3">
+                موقع القرآن الكريم
+                  <img src="images/logo.jpg" class="w-16 h-10 rounded-lg" alt="logo">
+            </h2>
+
+            <p class="text-gray-300 text-center text-sm">
+                نسأل الله أن يجعل هذا العمل خالصًا لوجهه الكريم
+            </p>
+
+            <div class="flex items-center gap-5 text-2xl">
+
+                <a href="https://github.com/basma159" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                    class="text-gray-300 hover:text-[#9CB080] transition duration-300 hover:-translate-y-1">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/basma-ahmed-360b73426/" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    class="text-gray-300 hover:text-[#9CB080] transition duration-300 hover:-translate-y-1">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="mailto:basmaabdelawal159@gmail.com" aria-label="Email"
+                    class="text-gray-300 hover:text-[#9CB080] transition duration-300 hover:-translate-y-1">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <div class="w-full max-w-md h-px bg-[#618764]"></div>
+
+            <p class="text-gray-400 text-xs text-center">
+                © 2026 موقع القرآن الكريم — جميع الحقوق محفوظة
+            </p>
+
+        </div>
+    </footer>
 
 
     <script src="js/hls.min.js"></script>
