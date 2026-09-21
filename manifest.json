@@ -1,8 +1,9 @@
 {
     "name": "Quran web",
     "short_name": "Quran",
-    "id": "/index.html",
-    "start_url": "/index.html",
+    "id": "./",
+    "start_url": "./",
+    "scope": "./",
     "display": "standalone",
     "background_color": "#273338",
     "theme_color": "#fff",
