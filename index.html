@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع القرآن الكريم</title>
+    <!--manifest.json-->
+    <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="images/Qur'an-vector - yaritsu zy.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/style.css">
@@ -126,7 +128,7 @@
         <div class="flex justify-center items-center">
             <a href="#" class="flex justify-center items-center">
                 <h2 class="logo font-bold text-[#9CB080] flex justify-center items-center gap-3">موقع القرآن الكريم
-                    <img src="images/logo.jpg" class="w-16 h-10 rounded-lg" alt="logo">
+                    <img src="images/logo.png" class="w-16 h-10 rounded-lg" alt="logo">
                 </h2>
             </a>
         </div>
@@ -247,7 +249,7 @@
     <!-- second section -->
     <section id="Tadabor" class="section w-full flex flex-col justify-center items-center p-10 scroll-mt-10">
         <div class="container w-full flex flex-col justify-center items-center gap-4 text-center p-5 rounded-lg">
-        
+
             <h2 class="text-lg md:text-2xl text-white font-bold"> تدبر بعض من آيات القرآن الكريم</h2>
             <div class="flex flex-col justify-center items-center gap-4 text-sm md:text-base">
                 <label class=" font-bold text-lg text-white "> اختر الآية</label>
@@ -335,7 +337,7 @@
 
             <h2 class="logo text-2xl font-bold text-[#9CB080] flex justify-center items-center gap-3">
                 موقع القرآن الكريم
-                  <img src="images/logo.jpg" class="w-16 h-10 rounded-lg" alt="logo">
+                <img src="images/logo.png" class="w-16 h-10 rounded-lg" alt="logo">
             </h2>
 
             <p class="text-gray-300 text-center text-sm">
@@ -373,6 +375,22 @@
     <script src="js/hls.min.js"></script>
 
     <script src="js/script.js"></script>
+    <!--service-worker.js  -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(() => {
+                        
+                        console.log("service worker registered successfully")
+                    })
+                    .catch((error) => {
+                        console.log("service worker registration failed", error)
+                    })
+            })
+        }
+
+    </script>
 </body>
 
 </html>
